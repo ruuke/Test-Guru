@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  done_tests: MyString
-  right_answers: 1
+  name: MyString
+  nickname: MyString
 
 two:
-  done_tests: MyString
-  right_answers: 1
+  name: MyString
+  nickname: MyString
