@@ -11,10 +11,10 @@ categories = Category.create([
   ])
 
 tests = Test.create([
-  {title: :Ruby, level: 0, category_id: 2},
-  {title: :Rails, level: 1, category_id: 2},
-  {title: :Html, level: 0, category_id: 1},
-  {title: :CSS, level: 0, category_id: 1}
+  {title: :Ruby, level: 0, category_id: categories[1]},
+  {title: :Rails, level: 1, category_id: categories[1]},
+  {title: :Html, level: 0, category_id: categories[0]},
+  {title: :CSS, level: 0, category_id: categories[0]}
   ])
 
 questions = Question.create([
