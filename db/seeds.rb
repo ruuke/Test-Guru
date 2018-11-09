@@ -17,9 +17,9 @@ users = User.create([
 
 tests = Test.create([
   {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[1].id},
-  {title: :Rails, level: 1, category_id: categories[1].id},
-  {title: :Html, level: 0, category_id: categories[0].id},
-  {title: :CSS, level: 0, category_id: categories[0].id}
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[1].id},
+  {title: :Html, level: 0, category_id: categories[0].id, user_id: users[1].id},
+  {title: :CSS, level: 0, category_id: categories[0].id, user_id: users[1].id}
   ])
 
 questions = Question.create([
