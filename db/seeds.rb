@@ -11,15 +11,15 @@ categories = Category.create([
   ])
 
 users = User.create([
-  {name: "Ivan Ivanov", nickname: 'Vano'},
-  {name: 'JJ Abrams', nickname: 'Django'}
+  {name: "Ivan Ivanov", email: 'Vano@mail.ru', password: 'qwe'},
+  {name: 'JJ Abrams', email: 'Django@mail.ru', password: '123'}
   ])
 
 tests = Test.create([
   {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[1].id},
   {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[1].id},
-  {title: :Html, level: 0, category_id: categories[0].id, user_id: users[1].id},
-  {title: :CSS, level: 0, category_id: categories[0].id, user_id: users[1].id}
+  {title: :Html, level: 0, category_id: categories[0].id},
+  {title: :CSS, level: 0, category_id: categories[0].id}
   ])
 
 questions = Question.create([
