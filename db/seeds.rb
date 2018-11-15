@@ -44,9 +44,9 @@ answers = Answer.create([
   ])
 
 
-tests_passage = TestPassage.create([
-  {user_id: users[1].id, test_id: tests[0].id},
-  {user_id: users[1].id, test_id: tests[2].id},
-  {user_id: users[1].id, test_id: tests[3].id},
-  {user_id: users[0].id, test_id: tests[0].id}
+test_passages = TestPassage.create([
+  {user_id: users[1].id, test_id: tests[0].id, points: 50},
+  {user_id: users[1].id, test_id: tests[2].id, points: 50},
+  {user_id: users[1].id, test_id: tests[3].id, points: 50},
+  {user_id: users[0].id, test_id: tests[0].id, points: 50}
   ])
