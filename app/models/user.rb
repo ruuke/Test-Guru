@@ -5,12 +5,10 @@ class User < ApplicationRecord
   
   def tests_passage(level)
     Test
-      .joins('JOIN test_passages ON tests.id = test_passages.test_id')
+      .joins(:test_passages)
       .where(test_passages: {user_id: id})
       .where(level: level)
   end
 
   validates :email, presence: true
 end
-
-

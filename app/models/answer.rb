@@ -7,10 +7,6 @@ class Answer < ApplicationRecord
   validate :validate_numbers_of_answers
 
   def validate_numbers_of_answers
-    errors.add(:question_id) if count_question_id_uniq(question_id) > 4
-  end
-
-  def count_question_id_uniq(id)
-    Answer.where(question_id: id).pluck(:question_id).length
-  end
+    errors.add(:question) if question.answers.count >= 4
+  end  
 end
