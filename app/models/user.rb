@@ -1,13 +1,18 @@
 class User < ApplicationRecord
-	has_many :created_tests, class_name: "Test", foreign_key: :user_id, dependent: :nullify
-	has_many :test_passages
-	has_many :tests, through: :test_passages
-
-
+  has_many :created_tests, class_name: "Test", foreign_key: :user_id, dependent: :nullify
+  has_many :test_passages
+  has_many :tests, through: :test_passages
+  
   def tests_passage(level)
     Test
-      .joins('JOIN test_passages ON tests.id = test_passages.test_id')
+      .joins(:test_passages)
       .where(test_passages: {user_id: id})
-      .where(level: level)
+      .by_level(level)
   end
+
+  def mine(level)
+    tests.by_level(level)
+  end
+
+  validates :email, presence: true
 end
