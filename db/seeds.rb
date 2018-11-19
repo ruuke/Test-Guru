@@ -10,11 +10,17 @@ categories = Category.create([
   {title: :Frontend}, {title: :Backend}
   ])
 
+users = User.create([
+  {name: "Ivan Ivanov", email: 'Vano@mail.ru', password: 'qwe'},
+  {name: 'JJ Abrams', email: 'Django@mail.ru', password: '123'},
+  {name: 'Admin', email: 'Admin@mail.ru', password: 'Admin'}
+  ])
+
 tests = Test.create([
-  {title: :Ruby, level: 0, category_id: categories[1].id},
-  {title: :Rails, level: 1, category_id: categories[1].id},
-  {title: :Html, level: 0, category_id: categories[0].id},
-  {title: :CSS, level: 0, category_id: categories[0].id}
+  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[2].id},
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[2].id},
+  {title: :Html, level: 0, category_id: categories[0].id, user_id: users[2].id},
+  {title: :CSS, level: 0, category_id: categories[0].id, user_id: users[2].id}
   ])
 
 questions = Question.create([
@@ -37,14 +43,10 @@ answers = Answer.create([
   {answer: "Rails question 1 - answer 3",question_id: questions[1].id}
   ])
 
-users = User.create([
-  {name: "Ivan Ivanov", nickname: 'Vano'},
-  {name: 'JJ Abrams', nickname: 'Django'}
-  ])
 
 tests_passage = TestPassage.create([
   {user_id: users[1].id, test_id: tests[0].id},
   {user_id: users[1].id, test_id: tests[2].id},
   {user_id: users[1].id, test_id: tests[3].id},
-  {user_id: users[1].id, test_id: tests[0].id}
+  {user_id: users[0].id, test_id: tests[0].id}
   ])
