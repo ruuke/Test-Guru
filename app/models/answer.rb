@@ -7,6 +7,6 @@ class Answer < ApplicationRecord
   validate :validate_numbers_of_answers
 
   def validate_numbers_of_answers
-    errors.add(:question) if question.answers.count >= 4
+    errors.add(:question, 'кол-во ответов может быть не больше 4-х') if question.answers.count >= 4
   end  
 end

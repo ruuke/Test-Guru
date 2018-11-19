@@ -7,7 +7,11 @@ class User < ApplicationRecord
     Test
       .joins(:test_passages)
       .where(test_passages: {user_id: id})
-      .where(level: level)
+      .by_level(level)
+  end
+
+  def mine(level)
+    tests.by_level(level)
   end
 
   validates :email, presence: true
