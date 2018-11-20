@@ -1,0 +1,29 @@
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+
+<h2>Questions</h2>
+<% @test.questions.each do |question| %>
+  <p>
+    <strong>question:</strong>
+    <%= question.body %>
+    <td><%= link_to 'Show', test_question_path(question) %></td>
+    <td><%= link_to 'Destroy', test_question_path(question),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  </p>
+<% end %>
+
+<h2>Add a question:</h2>
+<%= form_with(model: [ @test, @test.questions.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', tests_path %>
