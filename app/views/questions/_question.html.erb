@@ -1,0 +1,14 @@
+<p>
+  <strong>Question:</strong>
+  <%= question.body %>
+</p>
+
+<p>
+  <%= link_to 'Show', [question.test, question] %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', [question.test, question],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

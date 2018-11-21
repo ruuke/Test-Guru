@@ -6,7 +6,4 @@ class TestsController < ApplicationController
   def show
     @test = Test.find(params[:id])
   end
-
-  # private
-  # def tests_
-end
+ end
