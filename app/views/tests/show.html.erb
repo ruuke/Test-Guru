@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+
+<h2>Questions</h2>
+<%= render @test.questions %>
+  
+<h2>Add a question:</h2>
+<%= render 'questions/form' %>
+
+<%= link_to 'Back', tests_path %>
