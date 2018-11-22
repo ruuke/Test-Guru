@@ -3,10 +3,22 @@
   <%= @test.title %>
 </p>
 
-<h2>Questions</h2>
-<%= render @test.questions %>
+<p>
+  <strong>Level:</strong>
+  <%= test_level(@test) %>
+</p>
+
+<table>
+  <tr>
+    <th>Questions</th>
+  </tr>
+
+  <%= render @test.questions %>
   
+</table>
+
 <h2>Add a question:</h2>
 <%= render 'questions/form' %>
 
+<%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>

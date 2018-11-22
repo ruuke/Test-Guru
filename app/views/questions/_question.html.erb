@@ -1,14 +1,9 @@
-<p>
-  <strong>Question:</strong>
-  <%= question.body %>
-</p>
-
-<p>
-  <%= link_to 'Show', question %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', question ,
+<tr>
+  <td><%= question.body %></td>
+  <td><%= link_to 'Show', question %></td>
+  <td><%= link_to 'Edit', edit_question_path(question) %></td>
+  <td><%= link_to 'Delete question', question ,
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-</p>
+  </td>
+</tr>
