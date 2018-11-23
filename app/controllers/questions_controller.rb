@@ -1,6 +1,6 @@
  class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[create]
+  before_action :find_test, only: %i[create new index]
   before_action :find_question, only: %i[edit show destroy update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -18,7 +18,7 @@
     if @question.save
       redirect_to @question.test
     else
-      render 'new'
+      render :new
     end
   end
 

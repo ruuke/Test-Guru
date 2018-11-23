@@ -14,11 +14,10 @@
   </tr>
 
   <%= render @test.questions %>
-  
-</table>
 
-<h2>Add a question:</h2>
-<%= render 'questions/form' %>
+</table><br>
+
 
 <%= link_to 'Edit', edit_test_path(@test) %> |
-<%= link_to 'Back', tests_path %>
+<%= link_to 'Back', tests_path %> |
+<%= link_to 'Create new question', new_test_question_path(@test) %>
