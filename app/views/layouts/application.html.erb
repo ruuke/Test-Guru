@@ -11,14 +11,6 @@
 
   <body>
     <%= yield %>
-    <footer>
-      <hr>
-        <h1>Об авторе сайта Test Guru</h1>
-        <p><b>Кокотов Михаил</b></p>
-        <a href=<%= github_url('ruuke', 'Test-Guru') %> target="_blank">Test-Guru. Ссылка на GitHub автора</a><br>
-        <a href="https://thinknetica.com/" target="_blank">Сайт школы Thinknetica</a><br>
-        <%= current_year %>
-      <hr>
-    </footer>
+    <%= render 'shared/footer' %>
   </body>
 </html>
