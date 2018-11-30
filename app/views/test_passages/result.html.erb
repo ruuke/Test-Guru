@@ -1,0 +1,8 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed</h1>
+<% if test_result(@test_passage) == true %>
+  <p >Your score <span class="colorgreen"><%= percentage_of_correct_answers*100 %></span>%. Test passed.</p>
+<% else %>
+  <p>Your score <span class="colorred"><%= percentage_of_correct_answers*100 %></span>%. Try again.</p>
+<% end %>
+
+<%= link_to 'Back to tests', tests_path %>
