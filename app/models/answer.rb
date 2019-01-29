@@ -3,10 +3,11 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
-  validates :answer, presence: true
-  validate :validate_numbers_of_answers
+  validates :body, presence: true
+  validate :validate_numbers_of_answers, on: :create
 
   def validate_numbers_of_answers
-    errors.add(:question, 'кол-во ответов может быть не больше 4-х') if question.answers.count >= 4
+  	message = "кол-во ответов может быть не больше 4-х"
+    errors.add(:question, message) if question.answers.count >= 4
   end  
 end

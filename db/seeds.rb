@@ -35,12 +35,12 @@ questions = Question.create([
   ])
 
 answers = Answer.create([
-  {answer: "Ruby question 1 - answer 1",question_id: questions[0].id, correct: true},
-  {answer: "Ruby question 1 - answer 2",question_id: questions[0].id},
-  {answer: "Ruby question 1 - answer 3",question_id: questions[0].id},
-  {answer: "Rails question 1 - answer 1",question_id: questions[1].id, correct: true},
-  {answer: "Rails question 1 - answer 2",question_id: questions[1].id, correct: true},
-  {answer: "Rails question 1 - answer 3",question_id: questions[1].id}
+  {body: "Ruby question 1 - body 1",question_id: questions[0].id, correct: true},
+  {body: "Ruby question 1 - body 2",question_id: questions[0].id},
+  {body: "Ruby question 1 - body 3",question_id: questions[0].id},
+  {body: "Rails question 1 - body 1",question_id: questions[1].id, correct: true},
+  {body: "Rails question 1 - body 2",question_id: questions[1].id, correct: true},
+  {body: "Rails question 1 - body 3",question_id: questions[1].id}
   ])
 
 
