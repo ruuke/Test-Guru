@@ -15,7 +15,7 @@ class TestPassage < ApplicationRecord
   end
 
   def percentage_of_correct_answers
-    (correct_questions.to_f/test.questions.count.to_f)*100
+    (correct_questions.to_f / test.questions.count.to_f) * 100
   end
 
   def completed?
@@ -31,16 +31,17 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.index(current_question)+1
+    test.questions.index(current_question) + 1
   end
 
   private
 
   def before_validation_set_current_question
+    self.current_question = 
     if current_question.nil?
-      self.current_question = test.questions.first if test.present?
+      test.questions.first
     else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question.id).first
     end
   end
 
