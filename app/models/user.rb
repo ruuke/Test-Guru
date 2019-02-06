@@ -24,4 +24,8 @@ class User < ApplicationRecord
       .by_level(level)
   end
 
+  def admin?
+    is_a?(Admin)
+  end
+
 end

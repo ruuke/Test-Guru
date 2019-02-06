@@ -6,7 +6,7 @@ class Admin::BaseController< ApplicationController
   before_action :admin_require
 
   def admin_require
-    redirect_to root_path, alert: 'You are not an admin!' unless current_user.is_a?(Admin)
+    redirect_to root_path, alert: 'You are not an admin!' unless current_user.admin?
   end
 
 end
