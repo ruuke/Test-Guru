@@ -42,11 +42,3 @@ answers = Answer.create([
   {body: "Rails question 1 - body 2",question_id: questions[1].id, correct: true},
   {body: "Rails question 1 - body 3",question_id: questions[1].id}
   ])
-
-
-test_passages = TestPassage.create([
-  {user_id: users[1].id, test_id: tests[0].id, points: 50},
-  {user_id: users[1].id, test_id: tests[2].id, points: 50},
-  {user_id: users[1].id, test_id: tests[3].id, points: 50},
-  {user_id: users[0].id, test_id: tests[0].id, points: 50}
-  ])
