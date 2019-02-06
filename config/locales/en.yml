@@ -31,3 +31,80 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Titile"
+        level: "Level"
+        category_id: "Category"
+      admin:
+        test:
+          title: "Title"
+          level: "Level"
+          category_id: "Category"
+    select:
+      prompt: "Select category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tests list"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "The %{title} test was completed!"
+    show:
+      header: "Passing the %{title} test"
+
+  admin:    
+    nav:
+      header: "admin panel"
+      welcome: "Welcome"
+      exit: "Logout"
+    base:
+      admin_require:
+        norights: "You are not an admin."
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tests list"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        create: "New test"
+      new:
+        header: "Create new test"
+      edit:
+        header: "Edit %{title} test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      form:
+        back: "Back"
+
+  users:
+    sessions:
+      create:
+        hello: "Hello, %{name}"
+
+  test_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test"

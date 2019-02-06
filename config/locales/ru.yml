@@ -1,2 +1,79 @@
 ru:
-  привет: 'Привет, Мир!'
+  hello: 'Привет, Мир!'
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень сложности"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите категорю"
+      
+    
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        many: "Обнаружено %{count} ошибок"
+        few: "Обнаружено %{count} ошибки"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Список тестов"
+      title: "Название"
+      level: "Уровень"
+      questions: "Кол-во вопросов"
+    test:
+      start: "Начать"
+
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен!"
+    show:
+      header: "Прохождение %{title} теста"
+
+  admin:
+    nav:
+      header: "панель администратора"
+      welcome: "Добро пожаловать"
+      exit: "Выйти"
+    base:
+      admin_require:
+        norights: "У вас недостаточно прав."
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        header: "Список тестов"
+        title: "Название"
+        level: "Уровень"
+        questions: "Кол-во вопросов"
+        actions: "Действия"
+        create: "Создать новый тест"
+      edit:
+        header: "Редактировать %{title} тест"
+      new: 
+        header: "Создать новый тест"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      form:
+        back: "Назад"
+
+  users:
+    sessions:
+      create:
+        hello: "Здравствуйте, %{name}"
+
+
+  test_mailer:
+    completed_test:
+      subject: "Вы прошли TestGuru."
