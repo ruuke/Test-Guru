@@ -1,11 +1,10 @@
- <h1>Listing tests</h1>
+ <h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>    
-    <th>Level</th>
-    <th>Questions</th>
-    <th colspan="4">Actions</th>
+    <th><%= t('.title') %></th>    
+    <th><%= t('.level') %></th>
+    <th><%= t('.questions') %></th>
   </tr>
 
   <%= render @tests %>
