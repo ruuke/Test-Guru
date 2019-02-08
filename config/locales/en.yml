@@ -70,6 +70,9 @@ en:
       header: "The %{title} test was completed!"
     show:
       header: "Passing the %{title} test"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist."
 
   admin:    
     nav:

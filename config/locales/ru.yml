@@ -38,6 +38,9 @@ ru:
       header: "Тест %{title} завершен!"
     show:
       header: "Прохождение %{title} теста"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка."
 
   admin:
     nav:
