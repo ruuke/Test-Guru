@@ -38,6 +38,9 @@ ru:
       header: "Тест %{title} завершен!"
     show:
       header: "Прохождение %{title} теста"
+    gist:
+      success: "Gist успешно сохранён! <a href='%{gist_url}' target='_blank'>Ссылка</a>"
+      failure: "Во время сохранения gist произошла ошибка."
 
   admin:
     nav:
@@ -77,3 +80,7 @@ ru:
   test_mailer:
     completed_test:
       subject: "Вы прошли TestGuru."
+
+  services:
+    gist_params:
+      question_description: "Вопрос о %{title} от TestGuru"

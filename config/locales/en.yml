@@ -70,6 +70,9 @@ en:
       header: "The %{title} test was completed!"
     show:
       header: "Passing the %{title} test"
+    gist:
+      success: "Gist was successfully created! <a href='%{gist_url}' target='_blank'>Link</a>"
+      failure: "An error occurred while saving gist."
 
   admin:    
     nav:
@@ -108,3 +111,7 @@ en:
   test_mailer:
     completed_test:
       subject: "You just completed the TestGuru test"
+
+  services:
+    gist_params:
+      question_description: "A question about %{title} from TestGuru"
