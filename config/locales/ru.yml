@@ -80,3 +80,7 @@ ru:
   test_mailer:
     completed_test:
       subject: "Вы прошли TestGuru."
+
+  services:
+    gist_params:
+      question_description: "Вопрос о %{title} от TestGuru"
