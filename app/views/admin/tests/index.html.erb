@@ -2,8 +2,12 @@
   <div class="col col-md-4">
     <h2><%= t('.header') %></h2>
       <table>
-        <tr>
-          <th><%= t('.title') %></th>    
+        <tr class="table">
+          <th class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>    
           <th><%= t('.level') %></th>
           <th><%= t('.questions') %></th>
           <th colspan="4"><%= t('.actions') %></th>
