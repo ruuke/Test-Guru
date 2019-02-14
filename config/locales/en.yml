@@ -102,6 +102,8 @@ en:
         delete: "Delete"
       form:
         back: "Back"
+      form_inline:
+        submit: "Ok"
 
   users:
     sessions:
