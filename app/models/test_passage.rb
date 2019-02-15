@@ -30,8 +30,16 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def current_question_index
+    test.questions.index(current_question)
+  end
+
   def current_question_number
-    test.questions.index(current_question) + 1
+    current_question_index + 1
+  end
+
+  def percentage_of_progress
+    (current_question_index.to_f / test.questions.count.to_f) * 100
   end
 
   private
