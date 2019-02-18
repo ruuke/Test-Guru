@@ -70,6 +70,8 @@ ru:
         delete: "Удалить"
       form:
         back: "Назад"
+      form_inline:
+        submit: "Ок"
 
   users:
     sessions:
