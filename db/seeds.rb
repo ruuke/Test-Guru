@@ -7,27 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-users = User.create([
+users = User.create!([
   {name: "Mike", email: 'mkokotov1@gmail.com', password: '123456', type: 'Admin'}
   ])
 
-categories = Category.create([
+categories = Category.create!([
   {title: :Frontend}, {title: :Backend}
   ])
 
-tests = Test.create([
+tests = Test.create!([
   {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[0].id},
   {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[0].id}  
   ])
 
-questions = Question.create([
+questions = Question.create!([
   {body: 'Ruby question 1', test_id: tests[0].id},
   {body: 'Ruby question 2', test_id: tests[0].id},
   {body: 'Rails question 1', test_id: tests[1].id},
   {body: 'Rails question 2', test_id: tests[1].id}
   ])
 
-answers = Answer.create([
+answers = Answer.create!([
   {body: "Ruby question 1 - answer body 1",question_id: questions[0].id, correct: true},
   {body: "Ruby question 1 - answer body 2",question_id: questions[0].id},
   {body: "Ruby question 1 - answer body 3",question_id: questions[0].id},
