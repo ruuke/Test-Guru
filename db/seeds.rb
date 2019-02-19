@@ -12,8 +12,8 @@ categories = Category.create!([
   ])
 
 tests = Test.create!([
-  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[0].id},
-  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[0].id}  
+  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: 4},
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: 4}  
   ])
 
 questions = Question.create!([
