@@ -34,11 +34,11 @@ questions = Question.create([
   {body: 'CSS question 2', test_id: tests[3].id}
   ])
 
-# answers = Answer.create([
-#   {body: "Ruby question 1 - body 1",question_id: questions[0].id, correct: true},
-#   {body: "Ruby question 1 - body 2",question_id: questions[0].id},
-#   {body: "Ruby question 1 - body 3",question_id: questions[0].id},
-#   {body: "Rails question 1 - body 1",question_id: questions[1].id, correct: true},
-#   {body: "Rails question 1 - body 2",question_id: questions[1].id, correct: true},
-#   {body: "Rails question 1 - body 3",question_id: questions[1].id}
-#   ])
+answers = Answer.create([
+  {body: "Ruby question 1 - body 1",question_id: questions[0].id, correct: true},
+  {body: "Ruby question 1 - body 2",question_id: questions[0].id},
+  {body: "Ruby question 1 - body 3",question_id: questions[0].id},
+  {body: "Rails question 1 - body 1",question_id: questions[1].id, correct: true},
+  {body: "Rails question 1 - body 2",question_id: questions[1].id, correct: true},
+  {body: "Rails question 1 - body 3",question_id: questions[1].id}
+  ])
