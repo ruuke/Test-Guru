@@ -8,9 +8,7 @@
 
 
 users = User.create([
-  {name: "Ivan Ivanov", email: 'Vano@mail.ru', password: '123456'},
-  {name: 'JJ Abrams', email: 'Django@mail.ru', password: '123456'},
-  {name: 'Admin', email: 'Admin@mail.ru', password: 'Admin1'}
+  {name: "Mike", email: 'mkokotov1@gmail.com', password: '123456', type: 'Admin'}
   ])
 
 categories = Category.create([
@@ -18,8 +16,8 @@ categories = Category.create([
   ])
 
 tests = Test.create([
-  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[2].id},
-  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[2].id}  
+  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[0].id},
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[0].id}  
   ])
 
 questions = Question.create([
