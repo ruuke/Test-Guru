@@ -1,0 +1,19 @@
+<h1>Feedback#index</h1>
+<p>Find me in app/views/feedback/index.html.erb</p>
+<h4>Feedback</h4>
+<p>Please leave us feedback, it's really appreciated.</p>
+
+<%= form_with model: @feedback, local: true do |f| %>
+  <%= f.hidden_field 'user_id', value: current_user.id %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+  <p>
+    <%= f.label 'subject' %>
+    <%= f.select 'subject', ['Problem', 'Suggestion', 'Question', 'Other'] %>
+  </p>
+  <p>
+    <%= f.label 'comment' %><br />
+    <%= f.text_area 'comment', :rows => 10, :cols => 30 %>
+  </p>
+  <p><%= f.submit 'Send' %></p>
+<% end %>
