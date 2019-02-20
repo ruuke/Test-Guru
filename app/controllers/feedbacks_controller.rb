@@ -1,9 +1,5 @@
 class FeedbacksController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @feedback = Feedback.new
   end
@@ -13,7 +9,7 @@ class FeedbacksController < ApplicationController
 
     if @feedback.save
       FeedbacksMailer.send_feedback(@feedback).deliver_now
-      redirect_to root_path
+      redirect_to root_path, notice: "Your comment has been sent."
     else
       render :new
     end
