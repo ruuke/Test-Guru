@@ -1,4 +1,5 @@
 class Test < ApplicationRecord
+  
   belongs_to :category
   belongs_to :user
   has_many :questions
@@ -15,4 +16,5 @@ class Test < ApplicationRecord
   scope :medium, -> { by_level(2..4) }
   scope :difficult, -> { by_level(5..Float::INFINITY) }
   scope :by_category_title, -> (title) {  joins(:category).where('categories.title = ?', title) }
+  
 end

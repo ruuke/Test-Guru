@@ -8,12 +8,11 @@
 
           <p>Please leave us feedback, it's really appreciated.</p>
           <%= form_with model: @feedback, local: true do |f| %>
-            <%= f.hidden_field 'user_id', value: current_user.id %>
             <%= render 'shared/errors', resource: @feedback %>
 
             <p>
               <%= f.label 'subject' %>
-              <%= f.select 'subject', ['Problem', 'Suggestion', 'Question', 'Other'] %>
+              <%= f.select 'subject', Feedback.subjects %>
             </p>
             <p>
               <%= f.label 'comment' %><br />

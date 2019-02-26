@@ -9,13 +9,12 @@ class TestPassage < ApplicationRecord
   
   before_validation :before_validation_set_current_question, on: %i[create update]
   
-
   def success?
     percentage_of_correct_answers >= PASS_TEST_PERCENT
   end
 
   def percentage_of_correct_answers
-    (correct_questions.to_f / test.questions.count.to_f) * 100
+    correct_questions.fdiv(test.questions.count) * 100
   end
 
   def completed?
@@ -39,7 +38,11 @@ class TestPassage < ApplicationRecord
   end
 
   def percentage_of_progress
-    (current_question_index.to_f / test.questions.count.to_f) * 100
+    current_question_index.fdiv(test.questions.count) *100
+  end
+
+  def badge_first_try(title, level)
+    user.tests_passage(title, level).size == 2 && self.success?
   end
 
   private

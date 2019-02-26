@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :body, presence: true
-  validate :validate_numbers_of_answers, on: :save
+  validate :validate_numbers_of_answers
 
   def validate_numbers_of_answers
   	message = "кол-во ответов может быть не больше 4-х"
