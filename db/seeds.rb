@@ -6,39 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = Category.create([
+
+categories = Category.create!([
   {title: :Frontend}, {title: :Backend}
   ])
 
-users = User.create([
-  {name: "Ivan Ivanov", email: 'Vano@mail.ru', password: 'qwe'},
-  {name: 'JJ Abrams', email: 'Django@mail.ru', password: '123'},
-  {name: 'Admin', email: 'Admin@mail.ru', password: 'Admin'}
+tests = Test.create!([
+  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: 4},
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: 4}  
   ])
 
-tests = Test.create([
-  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: users[2].id},
-  {title: :Rails, level: 1, category_id: categories[1].id, user_id: users[2].id},
-  {title: :Html, level: 0, category_id: categories[0].id, user_id: users[2].id},
-  {title: :CSS, level: 0, category_id: categories[0].id, user_id: users[2].id}
-  ])
-
-questions = Question.create([
+questions = Question.create!([
   {body: 'Ruby question 1', test_id: tests[0].id},
   {body: 'Ruby question 2', test_id: tests[0].id},
   {body: 'Rails question 1', test_id: tests[1].id},
-  {body: 'Rails question 2', test_id: tests[1].id},
-  {body: 'Html question 1', test_id: tests[2].id},
-  {body: 'Html question 2', test_id: tests[2].id},
-  {body: 'CSS question 1', test_id: tests[3].id},
-  {body: 'CSS question 2', test_id: tests[3].id}
+  {body: 'Rails question 2', test_id: tests[1].id}
   ])
 
-answers = Answer.create([
-  {body: "Ruby question 1 - body 1",question_id: questions[0].id, correct: true},
-  {body: "Ruby question 1 - body 2",question_id: questions[0].id},
-  {body: "Ruby question 1 - body 3",question_id: questions[0].id},
-  {body: "Rails question 1 - body 1",question_id: questions[1].id, correct: true},
-  {body: "Rails question 1 - body 2",question_id: questions[1].id, correct: true},
-  {body: "Rails question 1 - body 3",question_id: questions[1].id}
+answers = Answer.create!([
+  {body: "Ruby question 1 - answer body 1",question_id: questions[0].id, correct: true},
+  {body: "Ruby question 1 - answer body 2",question_id: questions[0].id},
+  {body: "Ruby question 1 - answer body 3",question_id: questions[0].id},
+  {body: "Ruby question 2 - answer body 1",question_id: questions[1].id, correct: true},
+  {body: "Ruby question 2 - answer body 2",question_id: questions[1].id},
+  {body: "Ruby question 2 - answer body 3",question_id: questions[1].id},
+  {body: "Rails question 1 - answer body 1",question_id: questions[2].id, correct: true},
+  {body: "Rails question 1 - answer body 2",question_id: questions[2].id, correct: true},
+  {body: "Rails question 1 - answer body 3",question_id: questions[2].id},
+  {body: "Rails question 2 - answer body 1",question_id: questions[3].id, correct: true},
+  {body: "Rails question 2 - answer body 2",question_id: questions[3].id},
+  {body: "Rails question 2 - answer body 3",question_id: questions[3].id}
   ])

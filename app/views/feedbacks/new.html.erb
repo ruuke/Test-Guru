@@ -1,0 +1,29 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    
+      <h4>Feedback</h4>
+
+      <div class="card border-primary">
+        <div class="card-body">
+
+          <p>Please leave us feedback, it's really appreciated.</p>
+          <%= form_with model: @feedback, local: true do |f| %>
+            <%= f.hidden_field 'user_id', value: current_user.id %>
+            <%= render 'shared/errors', resource: @feedback %>
+
+            <p>
+              <%= f.label 'subject' %>
+              <%= f.select 'subject', ['Problem', 'Suggestion', 'Question', 'Other'] %>
+            </p>
+            <p>
+              <%= f.label 'comment' %><br />
+              <%= f.text_area 'comment', :rows => 3, :cols => 30 %>
+            </p>
+            <p><%= f.submit 'Send', class: 'btn btn-primary' %></p>
+          <% end %>
+
+        </div>
+      </div 
+       
+  </div>
+</div>
