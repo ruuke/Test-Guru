@@ -7,13 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+# users = User.create!([
+#   {first_name: 'M', last_name: 'K', email: '1@1.40', password: '123456', type: 'Admin'}
+#   ])
+
 categories = Category.create!([
   {title: :Frontend}, {title: :Backend}
   ])
 
 tests = Test.create!([
-  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: 4},
-  {title: :Rails, level: 1, category_id: categories[1].id, user_id: 4}  
+  {title: :Ruby, level: 0, category_id: categories[1].id, user_id: 1},
+  {title: :Rails, level: 1, category_id: categories[1].id, user_id: 1}  
   ])
 
 questions = Question.create!([

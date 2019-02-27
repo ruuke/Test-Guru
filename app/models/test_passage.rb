@@ -1,6 +1,7 @@
 class TestPassage < ApplicationRecord
 
   PASS_TEST_PERCENT = 85
+  FIRST_TRY = 1
 
   belongs_to :user
   belongs_to :test
@@ -42,7 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def badge_first_try(title, level)
-    user.tests_passage(title, level).size == 2 && self.success?
+    user.tests_passage(title, level).size == FIRST_TRY && self.success?
   end
 
   private
