@@ -5,7 +5,7 @@
   <div class="col col-md-4">
     <h2><%= t('.header', title: @test_passage.test.title) %></h2>
 
-      <% if @test_passage.success? %>
+      <% if @test_passage.passed? %>
         <p >Your score <span class="color_green"><%= @test_passage.percentage_of_correct_answers %></span>%. Test passed.</p>
       <% else %>
         <p>Your score <span class="color_red"><%= @test_passage.percentage_of_correct_answers %></span>%. Try again.</p>

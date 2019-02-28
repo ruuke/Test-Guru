@@ -27,6 +27,15 @@ class User < ApplicationRecord
       .where('tests.title = ?', title)
       .where('tests.level = ?', level)
   end
+
+  def backend_tests_passage
+    Test
+      .joins(:test_passages)
+      .where(test_passages: {user_id: id})
+      .where(test_passages: {success: true})
+      .joins(:category)
+      .where('categories.title = ?', 'Backend')
+    end
   
   def admin?
     is_a?(Admin)
