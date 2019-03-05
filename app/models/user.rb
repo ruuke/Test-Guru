@@ -28,14 +28,20 @@ class User < ApplicationRecord
       .where('tests.level = ?', level)
   end
 
-  def backend_tests_passage
+  def tests_passage_by_category(category)
     Test
       .joins(:test_passages)
-      .where(test_passages: {user_id: id})
-      .where(test_passages: {success: true})
+      .where(test_passages: {user_id: id, success: true})
       .joins(:category)
-      .where('categories.title = ?', 'Backend')
-    end
+      .where('categories.title = ?', category)
+  end
+
+  def tests_passage_by_level(level)
+    Test
+      .joins(:test_passages)
+      .where(test_passages: {user_id: id, success: true})
+      .by_level(level)
+  end
   
   def admin?
     is_a?(Admin)

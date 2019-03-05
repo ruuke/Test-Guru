@@ -1,46 +1,57 @@
 class BadgeAwardsService
 
-  FIRST_TRY = 1
-  USER_HAS_NOT_BACKEND_MASTER_BADGE = 0
-    
+  RULES = ['first_try', 'backend_master', 'frontend_master', 'level_master']
+
   def initialize(test_passage)
     @test_passage = test_passage
     @title = test_passage.test.title
     @level = test_passage.test.level
+    @category = test_passage.test.category.title
+    @user = test_passage.user
   end
 
   def call
-    badge_first_try_valid?
-    badge_backend_master_valid?
+    @badges = []
+    RULES.each do # может быть заменить на Badge.pluck(:title).each ?? названия правил = тайтлам
+      |title| send ("badge_#{title}_valid?"), title
+    end
+    @badges   
   end  
 
-  def badge_first_try_valid?
-    if @test_passage.user.tests_passage(@title, @level).length == FIRST_TRY && test_passed?
-      user_badges << Badge.first
+  def badge_first_try_valid?(title)
+    if @user.tests_passage(@title, @level).length == 1
+      @badges << Badge.find_by(title: title)
     end
   end
 
-  def badge_backend_master_valid?
-    if count_user_backend_uniq_tests && user_not_backend_master? && test_passed?
-      user_badges << Badge.last
-      controller.flash[:notice] = 'Backend master'
+  def badge_backend_master_valid?(title)
+    if count_user_backend_uniq_tests && user_not_category_master?(title)
+      @badges << Badge.find_by(title: title)
     end
   end
 
-  def test_passed?
-    @test_passage.success?
+  def badge_frontend_master_valid?(title)
+    if count_user_frontend_uniq_tests && user_not_category_master?(title)
+      @badges << Badge.find_by(title: title)
+    end
   end
 
-  def user_not_backend_master?
-    @test_passage.user.badges.find_by(title: 'Backend master') == nil
+  def badge_level_master_valid?(title)
+    if @user.tests_passage_by_level(@level).uniq.length == Test.by_level(@level).length
+      @badges << Badge.find_by(title: title)
+    end
+  end
+
+  def user_not_category_master?(title)
+    @user.badges.find_by(title: title) == nil
   end
 
   def count_user_backend_uniq_tests
-    @test_passage.user.backend_tests_passage.uniq.length == Test.joins(:category).where('categories.title = ?', 'Backend').length
+    @user.tests_passage_by_category('Backend').uniq.length == Test.by_category_title('Backend').length
   end
 
-  def user_badges
-    @test_passage.user.badges
+  def count_user_frontend_uniq_tests
+    @user.tests_passage_by_category('Frontend').uniq.length == Test.by_category_title('Frontend').length
   end
-  
+
 end

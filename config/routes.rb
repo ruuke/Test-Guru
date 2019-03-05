@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :badges, only: %i[index show] do
-    get :user_index, on: :collection
-  end
+  resources :badges, only: :index
 
   resources :feedbacks, only: %i[new create]
   
@@ -32,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :badges, expect: %i[index show]
+    resources :badges
 
     resources :gists, only: :index
     

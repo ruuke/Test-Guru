@@ -1,0 +1,14 @@
+<div class="row justify-content-center mt-3 ">
+  <div class="col col-md-8">
+    <h3>Достижения</h3>
+
+    <table class="table table-hover">
+      <%= render partial: 'admin/badges/badge', collection: @badges %>
+    </table>
+
+    <div class="text-center">
+      <%= link_to 'Добавить достижение', new_admin_badge_path, class: 'btn btn-outline-success btn-sm' %>
+    </div>
+
+  </div>
+</div>
