@@ -2,8 +2,7 @@ class Admin::BadgesController < Admin::BaseController
 
   before_action :find_badge, only: %i[show edit update destroy]
 
-  def index
-    @user_badges = current_user.badges.length
+  def index    
     @badges = Badge.all
   end
 
