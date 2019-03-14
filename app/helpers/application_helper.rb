@@ -3,8 +3,8 @@ module ApplicationHelper
     "#{Time.now.year.to_i}."
   end
 
-  def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}"
+  def github_url(author, repo, project_name)
+    link_to "#{project_name}", "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
   def flash_class(level)

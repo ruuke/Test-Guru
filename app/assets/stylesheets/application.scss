@@ -1,3 +1,13 @@
 @import "bootstrap";
 @import "typography/icons";
 @import "global";
+
+#footer {
+  position: fixed;
+  background-color: #fff;
+  text-align: center;
+  left: 0; bottom: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+}
