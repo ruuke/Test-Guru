@@ -1,12 +1,11 @@
-<footer>
-  <hr>
-    <h3>Об авторе сайта Test Guru</h3>
-    <p><b>Кокотов Михаил</b></p>
-    <%= link_to 'Test-Guru. Ссылка на GitHub автора', github_url('ruuke', 'Test-Guru'),target: "_blank" %><br>
-    <a href="https://thinknetica.com/" target="_blank">Сайт школы Thinknetica</a><br>
+<div id="footer">
+  <footer>
+    <%= github_url('ruuke', 'Test-Guru', 'Test-Guru') %> &copy; <%= current_year %> |
+    <%= link_to 'ENG', lang: :en %> |
+    <%= link_to 'RUS', lang: :ru %><br>
+    <a href="http://www.thinknetica.com" target="_blank">Thinknetica</a> |
     <% if current_user.present? %>
-    	<%= link_to 'Обратная связь', new_feedback_url, target: "_blank" %><br>
-	   <% end %>
-    <%= current_year %>
-  <hr>
-</footer>
+      <%= link_to 'Обратная связь', new_feedback_url, target: "_blank" %><br>
+    <% end %>
+  </footer>
+</div>

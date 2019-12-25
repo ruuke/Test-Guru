@@ -9,11 +9,8 @@
         <%= @test_passage.current_question.body %>
       </b>
 
-      <div class="progress">
-        <div class="progress-bar" id="progress-bar" data-progress="<%= @test_passage.percentage_of_progress %>" aria-valuemax="100">
-          <%= @test_passage.percentage_of_progress %>%
-        </div>
-      </div>
+      <%= render 'shared/timer' if @test_passage.test.duration %>
+      <%= render 'shared/progress_bar' %>      
 
       <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
         <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>

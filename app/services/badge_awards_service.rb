@@ -12,11 +12,11 @@ class BadgeAwardsService
 
   def call
     @badges = []
-    RULES.each do # может быть заменить на Badge.pluck(:title).each ?? названия правил = тайтлам
-      |title| send ("badge_#{title}_valid?"), title
+    RULES.each do |title| # может быть заменить на Badge.pluck(:title).each ?? названия правил = тайтлам
+      send ("badge_#{title}_valid?"), title
     end
-    @badges   
-  end  
+    @badges
+  end
 
   def badge_first_try_valid?(title)
     if @user.tests_passage(@title, @level).length == 1

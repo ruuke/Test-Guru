@@ -44,6 +44,19 @@ class TestPassage < ApplicationRecord
     current_question_index.fdiv(test.questions.count) *100
   end
 
+  def overtime?(end_time)
+    Time.current > end_time
+  end
+  
+  def end_time
+    created_at + test.duration.seconds
+  end
+
+  def seconds_left
+    (end_time - Time.current).to_i
+  end
+
+
   private
 
   def set_success_value
@@ -70,5 +83,6 @@ class TestPassage < ApplicationRecord
   def correct_answers
     current_question.answers.correct
   end
+
 
 end
