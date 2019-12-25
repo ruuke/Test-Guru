@@ -42,7 +42,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n', '~> 5.0.0'
 
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'octicons_helper'
 
 gem 'faraday'
