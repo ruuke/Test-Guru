@@ -15,10 +15,6 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new
   end
 
-  def edit
-    
-  end
-
   def create
     @test = current_user.created_tests.new(test_params)
 
@@ -27,6 +23,10 @@ class Admin::TestsController < Admin::BaseController
     else
       render :new
     end
+  end
+
+  def edit
+    
   end
 
   def update

@@ -1,0 +1,16 @@
+<tr>
+  <td class="align-middle col-md-3"><%= image_tag badge.image %></td>
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle col-md-1">
+    <div class="btn-group btn-group-sm">
+      <%= link_to 'Редактировать',
+                  edit_admin_badge_path(badge),
+                  class: 'btn btn-outline-secondary'  %>
+      <%= link_to 'Удалить',
+                  admin_badge_path(badge),
+                  method: :delete,
+                  data: {confirm: 'Подтвердите удаление'},
+                  class: 'btn btn-outline-danger btn-sm' %>
+    </div>
+  </td>
+</tr>

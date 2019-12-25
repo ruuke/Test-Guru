@@ -1,0 +1,17 @@
+<div class="row justify-content-center mt-3 ">
+  <div class="col col-md-8">
+
+    <h3>Полученные достижения</h3>
+
+    <table class="table">
+      <%= render partial: 'badges/badge', collection: @user_badges %>
+    </table>
+
+    <h3>Еще можно получить</h3>
+
+    <table class="table">
+      <%= render partial: 'badges/badge', collection: @badges %>
+    </table>
+
+  </div>
+</div>

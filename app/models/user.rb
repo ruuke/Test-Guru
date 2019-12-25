@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
+  has_and_belongs_to_many :badges
 
   validates :email, uniqueness: true, format: { with: /.+@.+\..+/i }
 
@@ -19,13 +20,29 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
   
-  def tests_passage(level)
+  def tests_passage(title, level)
     Test
       .joins(:test_passages)
       .where(test_passages: {user_id: id})
-      .by_level(level)
+      .where('tests.title = ?', title)
+      .where('tests.level = ?', level)
   end
 
+  def tests_passage_by_category(category)
+    Test
+      .joins(:test_passages)
+      .where(test_passages: {user_id: id, success: true})
+      .joins(:category)
+      .where('categories.title = ?', category)
+  end
+
+  def tests_passage_by_level(level)
+    Test
+      .joins(:test_passages)
+      .where(test_passages: {user_id: id, success: true})
+      .by_level(level)
+  end
+  
   def admin?
     is_a?(Admin)
   end

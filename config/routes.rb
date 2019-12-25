@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :badges, only: :index
+
   resources :feedbacks, only: %i[new create]
   
-  namespace :admin do
-    get 'gists/index'
-  end
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
     controllers: { sessions: 'users/sessions' }
-
 
   get 'users/new'
   root 'tests#index'
@@ -32,6 +30,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
+
     resources :gists, only: :index
     
     resources :tests do
